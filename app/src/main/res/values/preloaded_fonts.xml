@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/abel</item>
+        <item>@font/basic</item>
+        <item>@font/open_sans_light</item>
+        <item>@font/source_serif_pro</item>
+        <item>@font/source_serif_pro_semibold</item>
+    </array>
+</resources>
