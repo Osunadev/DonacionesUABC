@@ -12,3 +12,5 @@ El plan es hacer vistas de los mockups previamente realizados en moqups.com. Ten
 **Tres video para aprender a realizar el menú de hamburguesa manejando Fragments:**
 https://www.youtube.com/watch?v=fGcMLu1GJEc&list=PLrnPJCHvNZuDQ-jWPw13-wY2J57Z6ep6G
 
+> En esta branch solamente vamos a trabajar los activities y layouts que corresponden a los mockups que hicimos, por lo que sólo se verá modificado el Manifest, nuestra carpeta de Layouts y nuestros archivos .java de la Activity correspondiente
+
