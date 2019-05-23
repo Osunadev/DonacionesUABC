@@ -1,7 +1,6 @@
 package com.example.donacionesuabc;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void logInUser(View view) {
         // Por ahorita este boton nos dirigira directamente a la pantalla de menu de usuario Logged In
-        Intent i1 = new Intent(this, MenuLoggedActivity.class);
+        Intent i1 = new Intent(this, DonateActivity.class);
         startActivity(i1);
     }
 }
