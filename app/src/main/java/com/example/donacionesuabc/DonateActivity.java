@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
@@ -43,6 +45,8 @@ public class DonateActivity extends AppCompatActivity {
     StorageReference mStorageRef;
     StorageTask uploadTask;
 
+    FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,12 @@ public class DonateActivity extends AppCompatActivity {
         postBtn = findViewById(R.id.postDonationBtn);
         chooseImgBtn = findViewById(R.id.chooseImageBtn);
         imgUpload = findViewById(R.id.uploadImage);
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        Toast.makeText(DonateActivity.this,  user.getDisplayName(), Toast.LENGTH_LONG).show();
+        Toast.makeText(DonateActivity.this, user.getEmail(), Toast.LENGTH_LONG).show();
     }
 
     public void uploadDonation(View view) {

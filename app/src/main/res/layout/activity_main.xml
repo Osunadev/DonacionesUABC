@@ -71,7 +71,7 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/btn_blue_menu_signin"
         android:fontFamily="@font/open_sans_light"
-        android:onClick="logInUser"
+        android:onClick="logInActivity"
         android:text="Iniciar Sesión con Donaciones UABC"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
