@@ -53,6 +53,7 @@
         android:background="@drawable/btn_yellow_menu"
         android:fontFamily="@font/basic"
         android:gravity="center_vertical"
+        android:onClick="menu"
         android:text="Ver Artículos"
         android:textAlignment="center"
         android:textAllCaps="false"
