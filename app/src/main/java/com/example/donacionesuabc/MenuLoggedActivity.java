@@ -58,4 +58,9 @@ public class MenuLoggedActivity extends AppCompatActivity {
         startActivity(intent);
         super.onBackPressed();
     }
+
+    public void showLastDonation(View view) {
+        Intent intent = new Intent(MenuLoggedActivity.this, LastDonationActivity.class);
+        startActivity(intent);
+    }
 }

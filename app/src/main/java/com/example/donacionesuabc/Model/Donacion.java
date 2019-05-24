@@ -17,6 +17,8 @@ public class Donacion {
     private String userId;
     private String imageUrl;
 
+    public Donacion(){}
+
     public Donacion(String userId, String articleName, String facultyName, String category, String description, String email, String facebook, String celular, String location, String imageUrl) {
         this.userId = userId;
         this.articleName = articleName;

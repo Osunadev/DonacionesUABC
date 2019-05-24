@@ -56,7 +56,6 @@ public class DonateActivity extends AppCompatActivity {
     // Firebase auth
     FirebaseUser user;
     // Firebase realtime database
-    FirebaseDatabase database;
     DatabaseReference  myRef;
 
 
@@ -85,8 +84,15 @@ public class DonateActivity extends AppCompatActivity {
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         // Database
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Donaciones");
+        myRef = FirebaseDatabase.getInstance().getReference("Donaciones");
+
+        // Prueba
+    /*    FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = db.getReference("mensajes");
+
+        String donacion_id = myRef.push().getKey();
+        myRef.child(donacion_id).setValue(System.currentTimeMillis()+"Hola");*/
+
     }
     /*
         Metodos que involucran subir la informacion de la donacion a Firebase:

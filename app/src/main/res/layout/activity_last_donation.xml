@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".LastDonationActivity">
+
+
+    <ImageView
+        android:id="@+id/lastUploadImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/image_placeholder" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/lastProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/lastArticleNameTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Nombre del artículo"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastFacultyTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Facultad a Donar"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastCategoryTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Categoría a la que pertenece"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastDescriptionTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Breve descripción del artículo"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastEmailTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Correo de contacto"
+                android:soundEffectsEnabled="true"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastFacebookTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Facebook"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastCelularTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Teléfono"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/lastLocationTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abel"
+                android:gravity="center"
+                android:hint="Ubicacion de entrega"
+                android:soundEffectsEnabled="true"
+                android:textColor="#000000"
+                android:textColorHint="#ffffff"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="26dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <ProgressBar
+        android:id="@+id/lastProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+</android.support.constraint.ConstraintLayout>
