@@ -33,4 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i1 = new Intent(this, MenuLoggedActivity.class);
         startActivity(i1);
     }
+
+    public void verArticulos(View view){
+        Intent i2 = new Intent(this, VerArticulos.class);
+        startActivity(i2);
+    }
 }
