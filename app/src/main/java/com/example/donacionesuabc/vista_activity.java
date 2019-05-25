@@ -27,7 +27,7 @@ public class vista_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_activity);
 
-        articulo = (Articulo) getIntent().getSerializableExtra("articulo");
+        articulo = (Articulo) getIntent().getParcelableExtra("articulo");
 
         ImageView imageView = (ImageView) findViewById(R.id.imgItem2);
         TextView titulo = (TextView) findViewById(R.id.itemTittle2);

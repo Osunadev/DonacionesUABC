@@ -9,12 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <!--DO NO FORGET TO DECLARE ACTIVITIES HERE -->
-
-        <activity android:name=".VerArticulos"></activity>
-        <activity android:name=".vista_activity"></activity>
-
+        <activity android:name=".Intercambios"></activity>
+        <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
+        <activity android:name=".VerArticulos" />
+        <activity android:name=".vista_activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuLoggedActivity"></activity>
+        <activity android:name=".MenuLoggedActivity" />
     </application>
 
 </manifest>

@@ -25,10 +25,7 @@ public class MainActivity extends AppCompatActivity {
         logInButton = (Button) findViewById(R.id.loginBtn);
         registroTxt = (TextView) findViewById(R.id.registroTxt);
         titleApp = (TextView) findViewById(R.id.menuTitleTxt);
-
-
     }
-
     public void logInUser(View view) {
         // Por ahorita este boton nos dirigira directamente a la pantalla de menu de usuario Logged In
         Intent i1 = new Intent(this, MenuLoggedActivity.class);

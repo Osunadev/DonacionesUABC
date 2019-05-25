@@ -29,17 +29,10 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_articulos);
 
-        if (getIntent() != null && getIntent().getSerializableExtra("savedValues") != null){
-                this.listItems = (ArrayList<Articulo>) getIntent().getSerializableExtra("savedValues");
-            listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-            listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-            listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        }else {
-            /***para que no este vacio al momento de crearlo**/
-            listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-            listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-            listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        }
+        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
+        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
+        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
+
         spinnerFacultad=findViewById(R.id.SpinnerFacultad);
         spinnerCategoria=findViewById(R.id.SpinnerCategoria);
 
