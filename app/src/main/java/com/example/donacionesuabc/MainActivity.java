@@ -32,11 +32,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i1);
     }
 
+
+    /****/
     public void menu(View view){
-        try {
-            startActivity(new Intent(this, VerArticulos.class));
-        }catch (Exception e){
-            Log.d("Error",e.toString());
-        }
+                /**esta es la linea original*/
+            //startActivity(new Intent(this, VerArticulos.class));
+
+            /**esta linea es para probar la view 4.1 donaciones*/
+            startActivity(new Intent(this, Donaciones_Activity.class));
     }
 }
