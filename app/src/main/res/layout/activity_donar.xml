@@ -62,9 +62,9 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="633dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/charizard"/>
+                android:src="@drawable/ic_insert_photo_black_24dp"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -113,8 +113,10 @@
 
             <EditText
                 android:id="@+id/nameTextbox"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+
+                android:layout_width="373dp"
+                android:layout_height="49dp"
+
 
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
@@ -323,12 +325,20 @@
                 android:visibility="visible"
                 tools:visibility="visible" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
             <Button
                 android:id="@+id/BtnCambios"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
-                android:text="Button" />
+                android:text="Donar" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
         </LinearLayout>
     </ScrollView>
