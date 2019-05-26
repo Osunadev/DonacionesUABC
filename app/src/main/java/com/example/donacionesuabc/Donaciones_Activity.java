@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -75,6 +76,15 @@ public class Donaciones_Activity extends AppCompatActivity implements AdapterVie
             spinnerCategoria.setAdapter(customAdapter2);
             spinnerCategoria.setOnItemSelectedListener(this);
         }
+
+        ImageButton back = (ImageButton) findViewById(R.id.backBtn);
+        back.setClickable(true);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 
