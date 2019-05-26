@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/home" />
 
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="633dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/backBtn2">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
@@ -80,16 +80,19 @@
                 android:id="@+id/itemImage"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                tools:srcCompat="@drawable/charizard" />
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/charizard"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="40dp" />
+                android:layout_height="40dp"
+                android:layout_gravity="center" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/tittleArticulo3aa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
@@ -110,9 +113,12 @@
 
             <EditText
                 android:id="@+id/nameTextbox"
+
                 android:layout_width="373dp"
                 android:layout_height="49dp"
 
+
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -123,8 +129,8 @@
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
 
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
 
@@ -133,6 +139,7 @@
                 android:id="@+id/tittleArticulo4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
@@ -153,8 +160,9 @@
 
             <Spinner
                 android:id="@+id/SpinnerFacultad"
-                android:layout_width="352dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -167,6 +175,7 @@
                 android:id="@+id/tittleArticulo22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
@@ -183,8 +192,9 @@
 
             <Spinner
                 android:id="@+id/SpinnerCategoria"
-                android:layout_width="333dp"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
@@ -197,6 +207,7 @@
                 android:id="@+id/tittleArticulo3asd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
@@ -217,20 +228,21 @@
 
             <EditText
                 android:id="@+id/descripcionArticulo"
-                android:layout_width="379dp"
+                android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
 
+                android:layout_marginEnd="8dp"
                 android:background="@color/colorPrimary"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
 
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
 
@@ -238,6 +250,7 @@
                 android:id="@+id/tittleArticulo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
@@ -258,9 +271,10 @@
 
             <EditText
                 android:id="@+id/email"
-                android:layout_width="379dp"
+                android:layout_width="match_parent"
                 android:layout_height="49dp"
 
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -270,8 +284,8 @@
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
 
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
 
@@ -279,6 +293,7 @@
                 android:id="@+id/tittleArticulso3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
@@ -295,8 +310,9 @@
 
             <EditText
                 android:id="@+id/telefono"
-                android:layout_width="379dp"
+                android:layout_width="match_parent"
                 android:layout_height="49dp"
+                android:layout_gravity="center"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -305,14 +321,15 @@
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textSize="14sp"
-                android:visibility="visible"
 
+                android:visibility="visible"
                 tools:visibility="visible" />
 
             <Button
                 android:id="@+id/donarBtn"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_gravity="center"
                 android:text="Button" />
 
         </LinearLayout>

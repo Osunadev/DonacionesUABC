@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".publicaciones_activas"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageButton
+        android:id="@+id/backBtn2"
+        android:layout_width="71dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#00FFFFFF"
+        android:tint="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/tittleArticulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tittlePublicaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:gravity="center"
+        android:outlineAmbientShadowColor="#000A0000"
+        android:outlineSpotShadowColor="#00130101"
+        android:shadowColor="#00030000"
+        android:shadowDx="100"
+        android:shadowDy="10"
+        android:shadowRadius="0"
+        android:text="Publicaciones \nActivas"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDonaciones"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/btn_redondo"
+        android:backgroundTint="#ffca62"
+        android:text="Donaciones"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnIntercambios"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittlePublicaciones" />
+
+    <Button
+        android:id="@+id/btnIntercambios"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="72dp"
+        android:background="@drawable/btn_redondo"
+        android:backgroundTint="#ffffff"
+        android:text="Intercambios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittlePublicaciones" />
+
+    <ListView
+        android:layout_width="395dp"
+        android:layout_height="430dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittlePublicaciones" />
+</android.support.constraint.ConstraintLayout>
