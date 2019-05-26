@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EstadoDonacion"
+    tools:context=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion"
     android:background="@color/colorPrimaryDark">
 
     <ImageButton
@@ -144,6 +144,7 @@
             android:textColor="#ffffff"/>
 
         <ListView
+            android:id="@+id/listaUsersInteresados"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +8,11 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.donacionesuabc.Articulo;
+import com.example.donacionesuabc.CustomAdapter;
+import com.example.donacionesuabc.CustomItems;
+import com.example.donacionesuabc.R;
 
 import java.util.ArrayList;
 
@@ -21,21 +26,26 @@ public class ModificarDonacion extends AppCompatActivity implements AdapterView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_donacion);
 
+        /**
+         * Se toman los datos de articulo y se escriben en los campos correspondientes
+         */
+
         articulo = (Articulo) getIntent().getParcelableExtra("articulo");
 
-        ImageView imageView = (ImageView) findViewById(R.id.itemImage);
-        TextView titulo = (TextView) findViewById(R.id.nameTextbox);
-        //TextView facultad = (TextView) findViewById(R.id.itemLocation2);
-        TextView descripcion = (TextView) findViewById(R.id.descripcionArticulo);
-        TextView contactos = (TextView) findViewById(R.id.email);
+        ImageView imageView = (ImageView) findViewById(R.id.modFotoArticulo);
+        TextView titulo = (TextView) findViewById(R.id.modTxtBoxNombre);
+        TextView descripcion = (TextView) findViewById(R.id.modTxtBoxDescripcion);
+        TextView contactos = (TextView) findViewById(R.id.modTxtBoxEmail);
         imageView.setImageResource(articulo.getImgFoto());
         titulo.setText(articulo.getTitulo());
-        //facultad.setText(articulo.getFacultad());
         descripcion.setText(articulo.getDescripcion());
         contactos.setText(articulo.getUserData());
 
-        spinnerFacultad=findViewById(R.id.SpinnerFacultad);
-        spinnerCategoria=findViewById(R.id.SpinnerCategoria);
+        /**
+         * Se hacen los spinners y se llenan con los datos necesarios
+         */
+        spinnerFacultad=findViewById(R.id.modSpinnerFacultad);
+        spinnerCategoria=findViewById(R.id.modSpinnerCategoria);
 
         //Crear la lista del spinner de facultad
         ArrayList<CustomItems> facultades=new ArrayList<>();
@@ -80,6 +90,9 @@ public class ModificarDonacion extends AppCompatActivity implements AdapterView.
 
     }
 
+    /**
+     * Funcion para el boton atras
+     */
     public void goBack(View view){
         finish();
     }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".Donaciones_Activity">
+    tools:context=".ActivitiesLoggedIn.PaqueteDonaciones.Donaciones">
 
 
     <Button
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvItems" />
+        app:layout_constraintTop_toBottomOf="@+id/listaRecientes" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tittleArticulo"
@@ -121,10 +121,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SpinnerCategoria" />
+        app:layout_constraintTop_toBottomOf="@+id/modSpinnerCategoria" />
 
     <Spinner
-        android:id="@+id/SpinnerFacultad"
+        android:id="@+id/modSpinnerFacultad"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -136,7 +136,7 @@
         app:layout_constraintTop_toBottomOf="@+id/barraBusqueda" />
 
     <Spinner
-        android:id="@+id/SpinnerCategoria"
+        android:id="@+id/modSpinnerCategoria"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -145,10 +145,10 @@
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SpinnerFacultad" />
+        app:layout_constraintTop_toBottomOf="@+id/modSpinnerFacultad" />
 
     <ListView
-        android:id="@+id/lvItems"
+        android:id="@+id/listaRecientes"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="24dp"

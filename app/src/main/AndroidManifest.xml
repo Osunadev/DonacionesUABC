@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ModificarDonacion"></activity>
-        <activity android:name=".EstadoDonacion" />
-        <activity android:name=".Publicaciones_activas" />
+        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.ModificarDonacion"></activity>
+        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion" />
+        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.PublicacionesActivasDonacion" />
         <activity android:name=".Intercambios" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
-        <activity android:name=".Donar_activity" />
-        <activity android:name=".Donaciones_Activity" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
+        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.SubirDonacion" />
+        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.Donaciones" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
         <activity android:name=".VerArticulos" />
-        <activity android:name=".vista_activity" />
+        <activity android:name=".VistaArticulo" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuLoggedActivity" />
+        <activity android:name=".ActivitiesLoggedIn.MenuLoggedActivity" />
     </application>
 
 </manifest>

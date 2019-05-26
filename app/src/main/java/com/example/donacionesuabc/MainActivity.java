@@ -1,13 +1,13 @@
 package com.example.donacionesuabc;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.donacionesuabc.ActivitiesLoggedIn.MenuLoggedActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, VerArticulos.class));
 
             /**esta linea es para probar la view 4.1 donaciones*/
-            //startActivity(new Intent(this, Donaciones_Activity.class));
+            //startActivity(new Intent(this, Donaciones.class));
     }
 }

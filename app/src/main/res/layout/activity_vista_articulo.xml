@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".vista_activity">
+    tools:context=".VistaArticulo">
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tittleArticulo"
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/home" />
 
     <Button
-        android:id="@+id/boton_azul"
+        android:id="@+id/btnContactar"
         android:layout_width="230dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -81,19 +81,19 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/boton_azul"
+        app:layout_constraintBottom_toTopOf="@+id/btnContactar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tittleArticulo">
 
         <ImageView
-            android:id="@+id/imgItem2"
+            android:id="@+id/modFotoArticulo"
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal" />
 
         <TextView
-            android:id="@+id/itemTittle2"
+            android:id="@+id/nombreArticulo"
             android:layout_width="match_parent"
             android:layout_height="41dp"
             android:layout_gravity="center_horizontal"
@@ -104,7 +104,7 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/itemLocation2"
+            android:id="@+id/facultadArticulo"
             android:layout_width="match_parent"
             android:layout_height="49dp"
             android:layout_gravity="center_horizontal"
@@ -115,7 +115,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/label"
+            android:id="@+id/modLabelDescripcion"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="left"
@@ -126,7 +126,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/itemDescription2"
+            android:id="@+id/modTxtBoxDescripcion"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorPrimary"
@@ -135,7 +135,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/ilabel2"
+            android:id="@+id/labelContacto"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_gravity="left"
@@ -146,7 +146,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/userData2"
+            android:id="@+id/contactoArticulo"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/colorPrimary"

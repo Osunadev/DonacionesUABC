@@ -1,14 +1,17 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.ActivitiesLoggedIn;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.donacionesuabc.Articulo;
+import com.example.donacionesuabc.R;
+import com.example.donacionesuabc.VistaArticulo;
 
 import java.util.ArrayList;
 
@@ -41,21 +44,29 @@ public class AdaptadorArticulos extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final Articulo Item = (Articulo) getItem(position);
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.item,null);
+        /**
+        Este adaptador convierte los articulos recientes a xml
+         */
+        convertView = LayoutInflater.from(context).inflate(R.layout.formato_lista_articulos,null);
         ImageView imgFoto = (ImageView) convertView.findViewById(R.id.imgFoto);
         TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvTitulo);
 
-
+        /**
+         Aqui se les da funcionalidad de boton para ver sus detalles
+         */
         imgFoto.setClickable(true);
         imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i  = new Intent(context,vista_activity.class);
+                Intent i  = new Intent(context, VistaArticulo.class);
                 i.putExtra("articulo",Item);
                 context.startActivity(i);
             }
         });
 
+        /**
+         * Escribe la informacion del articulo en los componentes
+         */
         imgFoto.setImageResource(Item.getImgFoto());
         tvTitulo.setText(Item.getTitulo());
 

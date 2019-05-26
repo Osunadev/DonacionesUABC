@@ -1,4 +1,4 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.donacionesuabc.Articulo;
+import com.example.donacionesuabc.R;
 
 import java.util.ArrayList;
 
@@ -40,7 +43,11 @@ public class AdaptadorDonaciones extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final Articulo Item = (Articulo) getItem(position);
 
-        convertView = LayoutInflater.from(context).inflate(R.layout.mis_donaciones,null);
+        /**
+         * Funciona igual que adaptador articulos pero con un componente adicional
+         */
+
+        convertView = LayoutInflater.from(context).inflate(R.layout.formato_lista_donaciones,null);
         ImageView imgFoto = (ImageView) convertView.findViewById(R.id.imgFotoDonacion);
         TextView tvTitulo = (TextView) convertView.findViewById(R.id.tvNombreDonacion);
         TextView tvDescripcion = (TextView) convertView.findViewById(R.id.tvDescripcionDonacion);
@@ -49,7 +56,7 @@ public class AdaptadorDonaciones extends BaseAdapter {
         imgFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i  = new Intent(context,EstadoDonacion.class);
+                Intent i  = new Intent(context, EstadoDonacion.class);
                 i.putExtra("articulo",Item);
                 context.startActivity(i);
             }

@@ -1,8 +1,10 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.ActivitiesLoggedIn;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.donacionesuabc.R;
 
 public class MenuLoggedActivity extends AppCompatActivity {
 

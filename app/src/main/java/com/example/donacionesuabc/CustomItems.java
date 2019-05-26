@@ -1,5 +1,10 @@
 package com.example.donacionesuabc;
 
+/**
+ * Esta clase tambien es para los spinners, disculpa que no sepa
+ * bien como funciona, pero fue de las primeras que hice
+ */
+
 public class CustomItems {
     private String spinnerText;
     private int spinnerImage;

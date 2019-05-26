@@ -1,41 +1,78 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.ListView;
+import android.widget.ImageView;
+import android.view.View;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.donacionesuabc.CustomAdapter;
+import com.example.donacionesuabc.CustomItems;
+import com.example.donacionesuabc.MainActivity;
+import com.example.donacionesuabc.R;
+
 import java.util.ArrayList;
 
-public class Donaciones_Activity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class SubirDonacion extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-        private Spinner spinnerFacultad;
-        private Spinner spinnerCategoria;
-        private ListView lvItems;
-        private AdaptadorArticulos adaptadorArticulos;
-        private ArrayList<Articulo> listItems = new ArrayList<>();
+    private static final int PICK_IMAGE = 100;
+    private Spinner spinnerFacultad;
+    private Spinner spinnerCategoria;
+    private ImageView item_img;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_donaciones);
+        setContentView(R.layout.activity_subir_donacion);
 
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
+        /**
+         * Aqui creo que Ignacio en lugar de hacer las funciones para los intent
+         * les agrego listeners
+         */
+        item_img = (ImageView) findViewById(R.id.modFotoArticulo);
+        item_img.setClickable(true);
+        item_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pickup_photo();
 
-        spinnerFacultad=findViewById(R.id.SpinnerFacultad);
-        spinnerCategoria=findViewById(R.id.SpinnerCategoria);
+            }
 
-        lvItems = findViewById(R.id.lvItems);
-        adaptadorArticulos = new AdaptadorArticulos(this,listItems);
-        lvItems.setAdapter(adaptadorArticulos);
+        });
 
+        ImageButton back = (ImageButton) findViewById(R.id.backBtn2);
+        back.setClickable(true);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ImageButton home = (ImageButton) findViewById(R.id.homeBtn2);
+        home.setClickable(true);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        /**
+         * Se inicializan los spinners
+         */
+        spinnerFacultad=findViewById(R.id.modSpinnerFacultad);
+        spinnerCategoria=findViewById(R.id.modSpinnerCategoria);
         //Crear la lista del spinner de facultad
         ArrayList<CustomItems> facultades=new ArrayList<>();
         facultades.add(new CustomItems("Seleccione Facultad",R.drawable.facultades));
@@ -77,14 +114,20 @@ public class Donaciones_Activity extends AppCompatActivity implements AdapterVie
             spinnerCategoria.setOnItemSelectedListener(this);
         }
 
-        ImageButton back = (ImageButton) findViewById(R.id.backBtn);
-        back.setClickable(true);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        }
+
+    private void pickup_photo(){
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(i,PICK_IMAGE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE){
+            item_img.setImageURI((Uri) data.getData());
+        }
 
     }
 
@@ -98,11 +141,4 @@ public class Donaciones_Activity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    public void donarArticulo(View view){
-        Intent actDonar = new Intent(this,Donar_activity.class );
-        startActivity(actDonar);
-    }
-
-
 }

@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".Donar_activity">
+    tools:context=".ActivitiesLoggedIn.PaqueteDonaciones.ModificarDonacion">
 
     <ImageButton
-        android:id="@+id/backBtn2"
+        android:id="@+id/backBtn"
         android:layout_width="71dp"
         android:layout_height="58dp"
         android:layout_marginStart="10dp"
@@ -17,17 +17,17 @@
         android:backgroundTint="#00FFFFFF"
         android:onClick="goBack"
         android:tint="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/tittleArticulo"
+        app:layout_constraintEnd_toStartOf="@+id/tittleModPublicacion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/tittlePublicacion"
+    <TextView
+        android:id="@+id/tittleModPublicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/source_serif_pro_semibold"
         android:gravity="center_horizontal"
@@ -51,34 +51,35 @@
         android:layout_height="58dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+
         android:layout_marginEnd="10dp"
         android:backgroundTint="#00FFFFFF"
-
         android:tint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tittleArticulo"
+        app:layout_constraintStart_toEndOf="@+id/tittleModPublicacion"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
 
     <ScrollView
+        android:id="@+id/scrollModDonacion"
         android:layout_width="0dp"
-        android:layout_height="633dp"
+        android:layout_height="550dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/backBtn2">
+        app:layout_constraintTop_toBottomOf="@+id/tittleModPublicacion">
 
         <LinearLayout
+            android:id="@+id/atributosModDonacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/itemImage"
+                android:id="@+id/modFotoArticulo"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center_horizontal" />
@@ -88,8 +89,8 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tittleArticulo3aa"
+            <TextView
+                android:id="@+id/modLabelNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -112,7 +113,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/nameTextbox"
+                android:id="@+id/modTxtBoxNombre"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
 
@@ -123,7 +124,6 @@
                 android:background="@color/colorPrimary"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:visibility="visible"
@@ -133,8 +133,8 @@
                 tools:visibility="visible" />
 
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tittleArticulo4"
+            <TextView
+                android:id="@+id/modLabelFacultad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -157,7 +157,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/SpinnerFacultad"
+                android:id="@+id/modSpinnerFacultad"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -169,8 +169,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/barraBusqueda" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tittleArticulo22"
+            <TextView
+                android:id="@+id/modLabelCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -189,7 +189,7 @@
                 android:textSize="21sp" />
 
             <Spinner
-                android:id="@+id/SpinnerCategoria"
+                android:id="@+id/modSpinnerCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -199,10 +199,10 @@
                 android:background="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/SpinnerFacultad" />
+                app:layout_constraintTop_toBottomOf="@+id/modSpinnerFacultad" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tittleArticulo3asd"
+            <TextView
+                android:id="@+id/modLabelDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -225,7 +225,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/descripcionArticulo"
+                android:id="@+id/modTxtBoxDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
@@ -244,8 +244,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tittleArticulo3"
+            <TextView
+                android:id="@+id/modLabelEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -268,7 +268,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/modTxtBoxEmail"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
 
@@ -287,8 +287,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/tittleArticulso3"
+            <TextView
+                android:id="@+id/modLabelTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -307,7 +307,7 @@
                 android:textSize="21sp" />
 
             <EditText
-                android:id="@+id/telefono"
+                android:id="@+id/modTxtBoxTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
                 android:layout_gravity="center"

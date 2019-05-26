@@ -14,6 +14,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Este es un adaptador para los spinners
+ */
+
 public class CustomAdapter extends ArrayAdapter<CustomItems> {
     public CustomAdapter(@NonNull Context context, ArrayList<CustomItems> customList) {
         super(context, 0, customList);

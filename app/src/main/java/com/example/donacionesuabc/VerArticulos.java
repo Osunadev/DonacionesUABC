@@ -1,17 +1,16 @@
 package com.example.donacionesuabc;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.wifi.aware.PublishConfig;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.donacionesuabc.ActivitiesLoggedIn.AdaptadorArticulos;
+import com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones.PublicacionesActivasDonacion;
 
 import java.util.ArrayList;
 
@@ -29,6 +28,9 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_articulos);
 
+        /**
+         * Aqui no estoy seguro de porque se repiten tanto
+         */
         listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
         listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
         listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
@@ -38,11 +40,11 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
         listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
         listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
+        /** Se inicializan los apinners y adaptadores */
+        spinnerFacultad=findViewById(R.id.modSpinnerFacultad);
+        spinnerCategoria=findViewById(R.id.modSpinnerCategoria);
 
-        spinnerFacultad=findViewById(R.id.SpinnerFacultad);
-        spinnerCategoria=findViewById(R.id.SpinnerCategoria);
-
-        lvItems = findViewById(R.id.lvItems);
+        lvItems = findViewById(R.id.listaRecientes);
         adaptadorArticulos = new AdaptadorArticulos(this,listItems);
         lvItems.setAdapter(adaptadorArticulos);
 
@@ -116,25 +118,11 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         this.listItems.add(a);
     }
 
-
-    ///era prueba
-    public void proof(View view){
-
-        /**Intent i2 = new Intent(this, prueba.class);
-        i2.putExtra("m",new Articulo(R.drawable.charizard,"Lizardon"));
-
-        startActivity(i2);*/
-        /*addRecentItems(new Articulo(R.drawable.charizard, "iron murio we :("));
-        Intent i = new Intent(this,VerArticulos.class);
-        i.putExtra("savedValues",listItems);
-        startActivity(i);
-        this.finish();*/
-        Intent i2 = new Intent(this,Publicaciones_activas.class);
-        startActivity(i2);
-    }
-
+    /**
+     * Funcion que hace Intent para la vista de ver mis Donaciones
+     */
     public void misDonaciones(View view){
-        Intent i3 = new Intent(this,Publicaciones_activas.class);
+        Intent i3 = new Intent(this, PublicacionesActivasDonacion.class);
         startActivity(i3);
     }
 
