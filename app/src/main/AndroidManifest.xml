@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Intercambios"></activity>
-        <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
+        <activity android:name=".publicaciones_activas"></activity>
+        <activity android:name=".Intercambios" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
         <activity android:name=".VerArticulos" />
         <activity android:name=".vista_activity" />
         <activity android:name=".MainActivity">
