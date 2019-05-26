@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Intercambios"
     android:background="@color/colorPrimaryDark"
-    >
+    tools:context=".Donaciones_Activity">
+
 
     <Button
         android:id="@+id/verTodos"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/btn_yellow_menu"
         android:fontFamily="@font/basic"
         android:gravity="center_vertical"
@@ -24,6 +25,7 @@
         android:textAllCaps="false"
         android:textColor="#000000"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lvItems" />
@@ -42,7 +44,7 @@
         android:shadowDx="100"
         android:shadowDy="10"
         android:shadowRadius="0"
-        android:text="Intercambios"
+        android:text="Donaciones"
         android:textColor="@android:color/background_light"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,8 +56,9 @@
         android:id="@+id/tittleRecientes"
         android:layout_width="138dp"
         android:layout_height="41dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/source_serif_pro_semibold"
         android:outlineAmbientShadowColor="#000A0000"
         android:outlineSpotShadowColor="#00130101"
@@ -66,15 +69,17 @@
         android:text="Recientes"
         android:textColor="@android:color/background_light"
         android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <EditText
         android:id="@+id/barraBusqueda"
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:background="#dddddd"
         android:backgroundTint="#C4C0C0"
@@ -97,10 +102,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="#00FFFFFF"
-        android:tint="#FFFFFF"
 
+        android:tint="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/tittleArticulo"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -110,7 +114,7 @@
         android:layout_width="145dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/btn_redondo"
         android:text="Buscar Artículo"
@@ -124,7 +128,7 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,7 +140,7 @@
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,29 +151,24 @@
         android:id="@+id/lvItems"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="8dp"
-        android:orientation="horizontal"
-        android:layout_marginBottom="140dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tittleRecientes"/>
+        app:layout_constraintTop_toBottomOf="@+id/tittleRecientes" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
-        android:background="#00FFFFFF"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:onClick="donarArticulo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tittleArticulo"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/addbutton_24dp" />
-
 
 </android.support.constraint.ConstraintLayout>

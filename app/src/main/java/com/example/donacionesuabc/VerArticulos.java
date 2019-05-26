@@ -32,6 +32,12 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
         listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
         listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
+        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
+        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
+        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
+        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
+        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
+        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
 
         spinnerFacultad=findViewById(R.id.SpinnerFacultad);
         spinnerCategoria=findViewById(R.id.SpinnerCategoria);
