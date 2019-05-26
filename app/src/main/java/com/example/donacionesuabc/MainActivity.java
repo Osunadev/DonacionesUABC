@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
     /****/
     public void menu(View view){
                 /**esta es la linea original*/
-            //startActivity(new Intent(this, VerArticulos.class));
+            startActivity(new Intent(this, VerArticulos.class));
 
             /**esta linea es para probar la view 4.1 donaciones*/
-            startActivity(new Intent(this, Donaciones_Activity.class));
+            //startActivity(new Intent(this, Donaciones_Activity.class));
     }
 }

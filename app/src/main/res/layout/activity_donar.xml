@@ -23,7 +23,7 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/tittleArticulo2"
+        android:id="@+id/tittlePublicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -324,7 +324,7 @@
                 tools:visibility="visible" />
 
             <Button
-                android:id="@+id/donarBtn"
+                android:id="@+id/BtnCambios"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"

@@ -1,50 +1,41 @@
 package com.example.donacionesuabc;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.net.wifi.aware.PublishConfig;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class VerArticulos extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+public class ModificarDonacion extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+    Articulo articulo;
     private Spinner spinnerFacultad;
     private Spinner spinnerCategoria;
-    private ListView lvItems;
-    private AdaptadorArticulos adaptadorArticulos;
-    private ArrayList<Articulo> listItems = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ver_articulos);
+        setContentView(R.layout.activity_modificar_donacion);
 
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
+        articulo = (Articulo) getIntent().getParcelableExtra("articulo");
+
+        ImageView imageView = (ImageView) findViewById(R.id.itemImage);
+        TextView titulo = (TextView) findViewById(R.id.nameTextbox);
+        //TextView facultad = (TextView) findViewById(R.id.itemLocation2);
+        TextView descripcion = (TextView) findViewById(R.id.descripcionArticulo);
+        TextView contactos = (TextView) findViewById(R.id.email);
+        imageView.setImageResource(articulo.getImgFoto());
+        titulo.setText(articulo.getTitulo());
+        //facultad.setText(articulo.getFacultad());
+        descripcion.setText(articulo.getDescripcion());
+        contactos.setText(articulo.getUserData());
 
         spinnerFacultad=findViewById(R.id.SpinnerFacultad);
         spinnerCategoria=findViewById(R.id.SpinnerCategoria);
-
-        lvItems = findViewById(R.id.lvItems);
-        adaptadorArticulos = new AdaptadorArticulos(this,listItems);
-        lvItems.setAdapter(adaptadorArticulos);
 
         //Crear la lista del spinner de facultad
         ArrayList<CustomItems> facultades=new ArrayList<>();
@@ -87,8 +78,10 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
             spinnerCategoria.setOnItemSelectedListener(this);
         }
 
+    }
 
-
+    public void goBack(View view){
+        finish();
     }
 
     @Override
@@ -101,41 +94,4 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-
-    public void menuPrincipal(View view){
-        finish();
-    }
-
-
-    /*
-     ** Esta funcion agrega elemntos al list view reciente,
-     ** recive un objeto articulo, como minimo debe recibir
-     **   una imagen y un titulo, caso contrario  vease dicha clase
-     ***/
-    public void addRecentItems(Articulo a){
-        this.listItems.add(a);
-    }
-
-
-    ///era prueba
-    public void proof(View view){
-
-        /**Intent i2 = new Intent(this, prueba.class);
-        i2.putExtra("m",new Articulo(R.drawable.charizard,"Lizardon"));
-
-        startActivity(i2);*/
-        /*addRecentItems(new Articulo(R.drawable.charizard, "iron murio we :("));
-        Intent i = new Intent(this,VerArticulos.class);
-        i.putExtra("savedValues",listItems);
-        startActivity(i);
-        this.finish();*/
-        Intent i2 = new Intent(this,Publicaciones_activas.class);
-        startActivity(i2);
-    }
-
-    public void misDonaciones(View view){
-        Intent i3 = new Intent(this,Publicaciones_activas.class);
-        startActivity(i3);
-    }
-
 }
