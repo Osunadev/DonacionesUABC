@@ -9,22 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.ModificarDonacion"></activity>
-        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion" />
-        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.PublicacionesActivasDonacion" />
-        <activity android:name=".Intercambios" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
-        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.SubirDonacion" />
-        <activity android:name=".ActivitiesLoggedIn.PaqueteDonaciones.Donaciones" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
-        <activity android:name=".VerArticulos" />
-        <activity android:name=".VistaArticulo" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".ActivitiesLoggedIn.PaqueteDonaciones.ModificarDonacion"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivitiesLoggedIn.PaqueteDonaciones.PublicacionesActivasDonacion"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivitiesLoggedIn.PaqueteDonaciones.SubirDonacion"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivitiesLoggedIn.PaqueteDonaciones.Donaciones"
+            android:screenOrientation="portrait" /> <!-- DO NO FORGET TO DECLARE ACTIVITIES HERE -->
+        <activity
+            android:name=".VerArticulos"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VistaArticulo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivitiesLoggedIn.MenuLoggedActivity" />
+        <activity
+            android:name=".ActivitiesLoggedIn.MenuLoggedActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

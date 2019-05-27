@@ -1,5 +1,6 @@
 package com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.example.donacionesuabc.Articulo;
 import com.example.donacionesuabc.CustomAdapter;
 import com.example.donacionesuabc.CustomItems;
+import com.example.donacionesuabc.MainActivity;
 import com.example.donacionesuabc.R;
 
 import java.util.ArrayList;
@@ -93,10 +95,6 @@ public class ModificarDonacion extends AppCompatActivity implements AdapterView.
     /**
      * Funcion para el boton atras
      */
-    public void goBack(View view){
-        finish();
-    }
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         CustomItems items=(CustomItems) adapterView.getSelectedItem();
@@ -105,6 +103,17 @@ public class ModificarDonacion extends AppCompatActivity implements AdapterView.
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
+
+    public void modBackArrow(View view) {
+        finish();
+    }
+
+    public void modBackHome(View view) {
 
     }
 }

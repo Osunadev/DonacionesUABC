@@ -11,66 +11,66 @@
         android:id="@+id/backBtn"
         android:layout_width="71dp"
         android:layout_height="58dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+
         android:backgroundTint="#00FFFFFF"
-        android:onClick="goBack"
+        android:onClick="modBackArrow"
         android:tint="#FFFFFF"
-        app:layout_constraintEnd_toStartOf="@+id/tittleModPublicacion"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tittleModPublicacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/source_serif_pro_semibold"
-        android:gravity="center_horizontal"
         android:outlineAmbientShadowColor="#000A0000"
         android:outlineSpotShadowColor="#00130101"
         android:shadowColor="#00030000"
         android:shadowDx="100"
         android:shadowDy="10"
         android:shadowRadius="0"
-        android:text="Modificar\nPublicacion"
+        android:text="Donar Artículo"
         android:textColor="@android:color/background_light"
-        android:textSize="30sp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/homeBtn2"
+        android:id="@+id/homeBtn"
         android:layout_width="71dp"
         android:layout_height="58dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
 
-        android:layout_marginEnd="10dp"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="modBackHome"
         android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tittleModPublicacion"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
 
     <ScrollView
         android:id="@+id/scrollModDonacion"
         android:layout_width="0dp"
-        android:layout_height="550dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tittleModPublicacion">
+        app:layout_constraintTop_toTopOf="@+id/guideline4">
 
         <LinearLayout
             android:id="@+id/atributosModDonacion"
@@ -82,12 +82,9 @@
                 android:id="@+id/modFotoArticulo"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:layout_gravity="center_horizontal" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_gravity="center" />
+                android:layout_gravity="center_horizontal"
+                android:onClick="selectPhoto"
+                android:src="@drawable/ic_insert_photo_black_24dp" />
 
             <TextView
                 android:id="@+id/modLabelNombre"
@@ -97,16 +94,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/source_serif_pro_semibold"
+                android:fontFamily="@font/open_sans_light"
                 android:outlineAmbientShadowColor="#000A0000"
                 android:outlineSpotShadowColor="#00130101"
                 android:shadowColor="#00030000"
                 android:shadowDx="100"
                 android:shadowDy="10"
                 android:shadowRadius="0"
-                android:text="Nombre del Articulo"
+                android:text="Nombre del Artículo"
                 android:textColor="@android:color/background_light"
-                android:textSize="21sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -114,8 +112,10 @@
 
             <EditText
                 android:id="@+id/modTxtBoxNombre"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+
+                android:layout_width="373dp"
+                android:layout_height="49dp"
+
 
                 android:layout_gravity="center"
                 android:layout_marginStart="8dp"
@@ -123,11 +123,12 @@
                 android:layout_marginEnd="8dp"
                 android:background="@color/colorPrimary"
                 android:ems="10"
+                android:fontFamily="@font/open_sans_light"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textSize="14sp"
-                android:visibility="visible"
 
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
@@ -141,7 +142,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/source_serif_pro_semibold"
+                android:fontFamily="@font/open_sans_light"
                 android:outlineAmbientShadowColor="#000A0000"
                 android:outlineSpotShadowColor="#00130101"
                 android:shadowColor="#00030000"
@@ -150,7 +151,8 @@
                 android:shadowRadius="0"
                 android:text="Facultad a Donar"
                 android:textColor="@android:color/background_light"
-                android:textSize="21sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -177,16 +179,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/source_serif_pro_semibold"
+                android:fontFamily="@font/open_sans_light"
                 android:outlineAmbientShadowColor="#000A0000"
                 android:outlineSpotShadowColor="#00130101"
                 android:shadowColor="#00030000"
                 android:shadowDx="100"
                 android:shadowDy="10"
                 android:shadowRadius="0"
-                android:text="Categoria a la que Pertenece"
+                android:text="Categoría a la que Pertenece"
                 android:textColor="@android:color/background_light"
-                android:textSize="21sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/modSpinnerCategoria"
@@ -209,16 +212,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/source_serif_pro_semibold"
+                android:fontFamily="@font/open_sans_light"
                 android:outlineAmbientShadowColor="#000A0000"
                 android:outlineSpotShadowColor="#00130101"
                 android:shadowColor="#00030000"
                 android:shadowDx="100"
                 android:shadowDy="10"
                 android:shadowRadius="0"
-                android:text="Descripcion del Articulo"
+                android:text="Descripción del Articulo"
                 android:textColor="@android:color/background_light"
-                android:textSize="21sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -235,11 +239,12 @@
                 android:layout_marginEnd="8dp"
                 android:background="@color/colorPrimary"
                 android:ems="10"
+                android:fontFamily="@font/open_sans_light"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textSize="14sp"
-                android:visibility="visible"
 
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
@@ -252,16 +257,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/source_serif_pro_semibold"
+                android:fontFamily="@font/open_sans_light"
                 android:outlineAmbientShadowColor="#000A0000"
                 android:outlineSpotShadowColor="#00130101"
                 android:shadowColor="#00030000"
                 android:shadowDx="100"
                 android:shadowDy="10"
                 android:shadowRadius="0"
-                android:text="Correo Electronico"
+                android:text="Correo Electrónico"
                 android:textColor="@android:color/background_light"
-                android:textSize="21sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -278,11 +284,12 @@
                 android:layout_marginEnd="8dp"
                 android:background="@color/colorPrimary"
                 android:ems="10"
+                android:fontFamily="@font/open_sans_light"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
                 android:textSize="14sp"
-                android:visibility="visible"
 
+                android:visibility="visible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
@@ -295,16 +302,17 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="8dp"
-                android:fontFamily="@font/source_serif_pro_semibold"
+                android:fontFamily="@font/open_sans_light"
                 android:outlineAmbientShadowColor="#000A0000"
                 android:outlineSpotShadowColor="#00130101"
                 android:shadowColor="#00030000"
                 android:shadowDx="100"
                 android:shadowDy="10"
                 android:shadowRadius="0"
-                android:text="Telefono"
+                android:text="Teléfono"
                 android:textColor="@android:color/background_light"
-                android:textSize="21sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/modTxtBoxTelefono"
@@ -316,10 +324,11 @@
                 android:layout_marginEnd="8dp"
                 android:background="@color/colorPrimary"
                 android:ems="10"
+                android:fontFamily="@font/open_sans_light"
                 android:inputType="textPersonName"
                 android:textAlignment="center"
-                android:textSize="14sp"
 
+                android:textSize="14sp"
                 android:visibility="visible"
                 tools:visibility="visible" />
 
@@ -327,20 +336,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
 
-            <Button
-                android:id="@+id/BtnCambios"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:background="@drawable/boton_azul"
-                android:text="Guardar Cambios" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="40dp" />
-
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/BtnCambios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_azul"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Hacer Donación"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="74dp" />
 
 
 </android.support.constraint.ConstraintLayout>

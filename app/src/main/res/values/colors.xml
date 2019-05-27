@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#E7AC37</color>
     <color name="colorPrimaryDark">#4C7A34</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#006e8c</color>
     <color name="yellowButtonMenu">#e7ac37</color>
     <color name="blueButtonMenuSignIn">#006e8c</color>
 </resources>

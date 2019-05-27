@@ -26,53 +26,23 @@ public class SubirDonacion extends AppCompatActivity implements AdapterView.OnIt
     private Spinner spinnerFacultad;
     private Spinner spinnerCategoria;
     private ImageView item_img;
-
+    private ImageButton back;
+    private ImageButton home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subir_donacion);
 
-        /**
-         * Aqui creo que Ignacio en lugar de hacer las funciones para los intent
-         * les agrego listeners
-         */
         item_img = (ImageView) findViewById(R.id.modFotoArticulo);
-        item_img.setClickable(true);
-        item_img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pickup_photo();
-
-            }
-
-        });
-
-        ImageButton back = (ImageButton) findViewById(R.id.backBtn2);
-        back.setClickable(true);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        ImageButton home = (ImageButton) findViewById(R.id.homeBtn2);
-        home.setClickable(true);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
+        back = (ImageButton) findViewById(R.id.backBtn2);
+        home = (ImageButton) findViewById(R.id.homeBtn2);
 
         /**
          * Se inicializan los spinners
          */
-        spinnerFacultad=findViewById(R.id.modSpinnerFacultad);
-        spinnerCategoria=findViewById(R.id.modSpinnerCategoria);
+        spinnerFacultad = findViewById(R.id.subSpinnerFacultad);
+        spinnerCategoria = findViewById(R.id.subSpinnerCategoria);
         //Crear la lista del spinner de facultad
         ArrayList<CustomItems> facultades=new ArrayList<>();
         facultades.add(new CustomItems("Seleccione Facultad",R.drawable.facultades));
@@ -140,5 +110,20 @@ public class SubirDonacion extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void backHome(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
+
+    public void backArrow(View view) {
+        finish();
+    }
+
+    public void selectPhoto(View view) {
+        pickup_photo();
     }
 }

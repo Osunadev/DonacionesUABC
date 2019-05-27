@@ -1,11 +1,14 @@
 package com.example.donacionesuabc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.donacionesuabc.ActivitiesLoggedIn.MenuLoggedActivity;
 
 public class VistaArticulo extends AppCompatActivity {
 
@@ -42,7 +45,9 @@ public class VistaArticulo extends AppCompatActivity {
     }
 
     public void goHome(View view){
-
+        Intent intent = new Intent(this, MenuLoggedActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

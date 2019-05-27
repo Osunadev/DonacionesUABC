@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <!--Single para que solo podamos seleccionar 1 solo item-->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_account"
+            android:title="Mi Cuenta" />
+        <item
+            android:id="@+id/nav_active_publications"
+            android:icon="@drawable/ic_active_publications"
+            android:title="Publicaciones Activas" />
+        <item
+            android:id="@+id/nav_request_donations"
+            android:icon="@drawable/ic_request_donations"
+            android:title="Mis Donaciones Solicitadas" />
+        <item
+            android:id="@+id/nav_request_trades"
+            android:icon="@drawable/ic_request_trades"
+            android:title="Mis Intercambios Solicitados" />
+    </group>
+
+</menu>

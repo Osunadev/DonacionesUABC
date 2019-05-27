@@ -27,7 +27,6 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_articulos);
-
         /**
          * Aqui no estoy seguro de porque se repiten tanto
          */
@@ -96,7 +95,6 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
         CustomItems items=(CustomItems) adapterView.getSelectedItem();
-        Toast.makeText(this,items.getSpinnerText(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -122,8 +120,7 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
      * Funcion que hace Intent para la vista de ver mis Donaciones
      */
     public void misDonaciones(View view){
-        Intent i3 = new Intent(this, PublicacionesActivasDonacion.class);
-        startActivity(i3);
+
     }
 
 }

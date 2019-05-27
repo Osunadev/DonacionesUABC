@@ -4,20 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion"
-    android:background="@color/colorPrimaryDark">
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion">
 
     <ImageButton
         android:id="@+id/homeBtn3"
         android:layout_width="71dp"
         android:layout_height="58dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="#00FFFFFF"
         android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tittleEstadoDon"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/home" />
 
@@ -25,12 +23,11 @@
         android:id="@+id/backBtn3"
         android:layout_width="71dp"
         android:layout_height="58dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:backgroundTint="#00FFFFFF"
-        android:tint="#FFFFFF"
         android:onClick="goBack"
-        app:layout_constraintEnd_toStartOf="@+id/tittleEstadoDon"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -40,8 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/source_serif_pro_semibold"
         android:gravity="center"
         android:outlineAmbientShadowColor="#000A0000"
@@ -50,28 +48,29 @@
         android:shadowDx="100"
         android:shadowDy="10"
         android:shadowRadius="0"
-        android:text="Estado de la\nDonacion"
+        android:text="Estado de la\nDonación"
         android:textColor="@android:color/background_light"
-        android:textSize="40sp"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tittleEstadoDon"
-        app:layout_constraintVertical_bias="0.121">
+        app:layout_constraintTop_toTopOf="@+id/guideline9">
 
         <LinearLayout
             android:id="@+id/nombreArticulo"
@@ -83,8 +82,10 @@
                 android:id="@+id/labelArticulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
                 android:layout_weight="1"
-                android:text="Articulo: "
+                android:fontFamily="@font/open_sans_light"
+                android:text="Artículo: "
                 android:textColor="#ffffff"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -94,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/open_sans_light"
                 android:text="TextView"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
@@ -108,11 +110,13 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:onClick="modificar"
             android:background="@drawable/btn_yellow_menu"
             android:backgroundTint="#ffca62"
-            android:text="Modificar Publicacion"
-            android:textSize="20sp"
+            android:fontFamily="@font/basic"
+            android:onClick="modificar"
+            android:text="Modificar Publicación"
+            android:textAllCaps="false"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <Space
@@ -126,26 +130,36 @@
             android:layout_gravity="center_horizontal"
             android:background="@drawable/btn_yellow_menu"
             android:backgroundTint="#ffffff"
-            android:text="Eliminar Publicacion"
-            android:textSize="20sp"
+            android:fontFamily="@font/basic"
+            android:text="Eliminar Publicación"
+            android:textAllCaps="false"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="40dp" />
+            android:layout_height="22dp" />
 
         <TextView
             android:id="@+id/subtitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/source_serif_pro"
             android:gravity="center_horizontal"
             android:text="Lista de Usuarios\nInteresados"
-            android:textSize="24sp"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
 
         <ListView
             android:id="@+id/listaUsersInteresados"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="113dp" />
 </android.support.constraint.ConstraintLayout>
