@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ActivitiesLoggedIn.PaqueteDonaciones.SubirDonacion">
+
+    <ImageButton
+        android:id="@+id/backBtn2"
+        android:layout_width="71dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="8dp"
+
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="backArrow"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tittleSubirPublicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:outlineAmbientShadowColor="#000A0000"
+        android:outlineSpotShadowColor="#00130101"
+        android:shadowColor="#00030000"
+        android:shadowDx="100"
+        android:shadowDy="10"
+        android:shadowRadius="0"
+        android:text="Donar Artículo"
+        android:textColor="@android:color/background_light"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/homeBtn2"
+        android:layout_width="71dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="8dp"
+
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="backHome"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home" />
+
+    <ScrollView
+        android:id="@+id/scrollDonar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4">
+
+        <LinearLayout
+            android:id="@+id/atributosDonar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/subFotoArticulo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:onClick="selectPhoto"
+                android:src="@drawable/ic_insert_photo_black_24dp" />
+
+            <TextView
+                android:id="@+id/subLabelNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Nombre del Artículo"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/subTxtBoxNombre"
+
+                android:layout_width="373dp"
+                android:layout_height="49dp"
+
+
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/open_sans_light"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="14sp"
+
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/subLabelFacultad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Facultad a Donar"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/subSpinnerFacultad"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barraBusqueda" />
+
+            <TextView
+                android:id="@+id/subLabelCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Categoría a la que Pertenece"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/subSpinnerCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/modSpinnerFacultad" />
+
+            <TextView
+                android:id="@+id/subLabelDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Descripción del Articulo"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/subTxtBoxDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/open_sans_light"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="14sp"
+
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/subLabelEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Correo Electrónico"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/subTxtBoxEmail"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/open_sans_light"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="14sp"
+
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/subLabelTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Teléfono"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/subTxtBoxTelefono"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/open_sans_light"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+
+                android:textSize="14sp"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnSubir"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_azul"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Hacer Donación"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="74dp" />
+
+
+</android.support.constraint.ConstraintLayout>
