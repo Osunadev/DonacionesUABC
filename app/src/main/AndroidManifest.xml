@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.donacionesuabc">
+    <!-- Para poder usar Picasso -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,9 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ActivitiesLoggedIn.LogInActivity"></activity>
         <activity
             android:name=".ActivitiesLoggedIn.PaqueteDonaciones.ModificarDonacion"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ActivitiesLoggedIn.PaqueteDonaciones.EstadoDonacion"
             android:screenOrientation="portrait" />

@@ -18,7 +18,7 @@
         android:tint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarDonacion"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <android.support.v7.widget.AppCompatTextView
@@ -26,7 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/source_serif_pro_semibold"
@@ -42,21 +41,20 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/homeBtn2"
         android:layout_width="71dp"
         android:layout_height="58dp"
-        android:layout_marginEnd="8dp"
 
+        android:layout_marginEnd="8dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="backHome"
         android:tint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarDonacion"
         app:srcCompat="@drawable/home" />
 
     <ScrollView
@@ -264,7 +262,7 @@
                 android:shadowDx="100"
                 android:shadowDy="10"
                 android:shadowRadius="0"
-                android:text="Correo Electrónico"
+                android:text="Correo Electrónico (alternativo)"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -293,6 +291,45 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/subLabelFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/open_sans_light"
+                android:outlineAmbientShadowColor="#000A0000"
+                android:outlineSpotShadowColor="#00130101"
+                android:shadowColor="#00030000"
+                android:shadowDx="100"
+                android:shadowDy="10"
+                android:shadowRadius="0"
+                android:text="Facebook"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/subTxtBoxFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorPrimary"
+                android:ems="10"
+                android:fontFamily="@font/open_sans_light"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+
+                android:textSize="14sp"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
 
             <TextView
                 android:id="@+id/subLabelTelefono"
@@ -352,6 +389,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:onClick="makeDonation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -364,6 +402,17 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="74dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarDonacion"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tittleSubirPublicacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

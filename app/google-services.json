@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "604784881435",
+    "firebase_url": "https://donacionesuabc-80f0e.firebaseio.com",
+    "project_id": "donacionesuabc-80f0e",
+    "storage_bucket": "donacionesuabc-80f0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604784881435:android:742937f400bf27a5",
+        "android_client_info": {
+          "package_name": "com.example.donacionesuabc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604784881435-e9v0n76m120srdfut0pf7mjakqiv7am8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.donacionesuabc",
+            "certificate_hash": "43b763f3991e0bede3a3d4cce8a1179fa6e0e4bd"
+          }
+        },
+        {
+          "client_id": "604784881435-hhk1ef65qerekag455cv06ijocotepo4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlqIHeg8eV7h-GZeV9WRlnXaF3SIsVrxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604784881435-hhk1ef65qerekag455cv06ijocotepo4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

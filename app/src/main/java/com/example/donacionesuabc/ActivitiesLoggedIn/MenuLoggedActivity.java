@@ -16,13 +16,19 @@ import android.widget.Toast;
 
 import com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones.Donaciones;
 import com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones.PublicacionesActivasDonacion;
+import com.example.donacionesuabc.MainActivity;
 import com.example.donacionesuabc.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MenuLoggedActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
     Button donacionesBtn;
     Button intercambiosBtn;
+
+    FirebaseAuth mAuth;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +49,14 @@ public class MenuLoggedActivity extends AppCompatActivity implements NavigationV
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        /* Hasta aqui termina todo lo que tiene que ver con el drawer */
 
-
-
-
-
-        /* Componentes del Layout */
         donacionesBtn = (Button) findViewById(R.id.donacionesBtn);
         intercambiosBtn = (Button) findViewById(R.id.intercambiosBtn);
+
+        // Cosas de Firebase
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
     }
 
     @Override
@@ -87,6 +93,11 @@ public class MenuLoggedActivity extends AppCompatActivity implements NavigationV
         if (drawer.isDrawerOpen(GravityCompat.START))
             drawer.closeDrawer(GravityCompat.START);
         else {
+            // Esto es para que no se vaya a la activity del menu de sesion no iniciada
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
             super.onBackPressed();
         }
     }
@@ -97,4 +108,13 @@ public class MenuLoggedActivity extends AppCompatActivity implements NavigationV
     public void goToDonaciones(View view) {
         startActivity(new Intent(this, Donaciones.class));
     }
+
+    public void signOut(View view) {
+        FirebaseAuth.getInstance().signOut();
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        MenuLoggedActivity.this.finish();
+    }
+
 }
