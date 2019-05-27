@@ -1,4 +1,4 @@
-package com.example.donacionesuabc.Model;
+package com.example.donacionesuabc.Firebase_backend.Model;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

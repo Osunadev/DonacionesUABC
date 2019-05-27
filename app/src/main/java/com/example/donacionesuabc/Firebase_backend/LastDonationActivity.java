@@ -1,4 +1,4 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.Firebase_backend;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.donacionesuabc.Model.Donacion;
+import com.example.donacionesuabc.Firebase_backend.Model.Donacion;
+import com.example.donacionesuabc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

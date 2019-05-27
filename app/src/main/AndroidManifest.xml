@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.donacionesuabc">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,18 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LastDonationActivity"></activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".DonateActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".Firebase_backend.LastDonationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Firebase_backend.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Firebase_backend.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Firebase_backend.DonateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Firebase_backend.MainFirebaseActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuLoggedActivity" />
+        <activity
+            android:name=".Firebase_backend.MenuLoggedFirebaseActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

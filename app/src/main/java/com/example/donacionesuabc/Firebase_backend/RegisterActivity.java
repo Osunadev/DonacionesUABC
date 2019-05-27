@@ -1,7 +1,9 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.Firebase_backend;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.donacionesuabc.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

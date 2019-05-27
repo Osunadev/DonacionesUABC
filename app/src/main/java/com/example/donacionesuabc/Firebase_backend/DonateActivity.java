@@ -1,15 +1,15 @@
 /* Estuve intentando muchas veces hacer el upload correcto de esto, y finalmente lo pude lograr gracias a este video https://www.youtube.com/watch?v=lPfQN-Sfnjw
     En combinacion de esta respuesta: https://stackoverflow.com/questions/50947932/cant-get-downloadurl-from-firebase
 */
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.Firebase_backend;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,8 +17,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.donacionesuabc.Model.Donacion;
-import com.example.donacionesuabc.Model.ManagePublicationName;
+import com.example.donacionesuabc.Firebase_backend.Model.Donacion;
+import com.example.donacionesuabc.Firebase_backend.Model.ManagePublicationName;
+import com.example.donacionesuabc.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

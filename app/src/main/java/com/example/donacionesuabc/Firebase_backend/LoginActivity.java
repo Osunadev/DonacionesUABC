@@ -1,20 +1,19 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.Firebase_backend;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.donacionesuabc.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void changeMenuLoggedIn() {
         // Por ahorita este boton nos dirigira directamente a la pantalla de menu de usuario Logged In
-        Intent intent = new Intent(this, MenuLoggedActivity.class);
+        Intent intent = new Intent(this, MenuLoggedFirebaseActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

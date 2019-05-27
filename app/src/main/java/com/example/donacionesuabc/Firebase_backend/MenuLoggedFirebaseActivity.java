@@ -1,4 +1,4 @@
-package com.example.donacionesuabc;
+package com.example.donacionesuabc.Firebase_backend;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.donacionesuabc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MenuLoggedActivity extends AppCompatActivity {
+public class MenuLoggedFirebaseActivity extends AppCompatActivity {
 
     Button donacionesBtn;
     Button intercambiosBtn;
@@ -23,7 +24,7 @@ public class MenuLoggedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_logged);
+        setContentView(R.layout.activity_menu_logged_firebase);
 
         donacionesBtn = (Button) findViewById(R.id.donacionesBtn);
         intercambiosBtn = (Button) findViewById(R.id.intercambiosBtn);
@@ -45,9 +46,9 @@ public class MenuLoggedActivity extends AppCompatActivity {
     public void userSignOut(View view) {
         FirebaseAuth.getInstance().signOut();
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainFirebaseActivity.class);
         startActivity(intent);
-        MenuLoggedActivity.this.finish();
+        MenuLoggedFirebaseActivity.this.finish();
     }
 
     @Override
@@ -60,7 +61,7 @@ public class MenuLoggedActivity extends AppCompatActivity {
     }
 
     public void showLastDonation(View view) {
-        Intent intent = new Intent(MenuLoggedActivity.this, LastDonationActivity.class);
+        Intent intent = new Intent(MenuLoggedFirebaseActivity.this, LastDonationActivity.class);
         startActivity(intent);
     }
 }
