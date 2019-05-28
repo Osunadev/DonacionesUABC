@@ -10,7 +10,14 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.donacionesuabc.ActivitiesLoggedIn.AdaptadorArticulos;
-import com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones.PublicacionesActivasDonacion;
+import com.example.donacionesuabc.Model.Donacion;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -20,32 +27,46 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
     private Spinner spinnerCategoria;
     private ListView lvItems;
     private AdaptadorArticulos adaptadorArticulos;
-    private ArrayList<Articulo> listItems = new ArrayList<>();
+    private ArrayList<Articulo> listItemsRecientes = new ArrayList<>();
+    private ArrayList<Donacion> listDonacionesRecientes = new ArrayList<>();
 
+    // Firebase realtime database
+    DatabaseReference donacionesRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_articulos);
-        /**
-         * Aqui no estoy seguro de porque se repiten tanto
-         */
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
-        listItems.add(new Articulo(R.drawable.yveltal, "Yveltal"));
-        listItems.add(new Articulo(R.drawable.silvally, "Silvally"));
-        /** Se inicializan los apinners y adaptadores */
+
+        // Firebase Realtime Database
+        donacionesRef = FirebaseDatabase.getInstance().getReference("Donaciones");
+
+        donacionesRef.orderByKey().limitToLast(5).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Este post de stack overflow me ayudo a debbugear mi codigo porque como la clase Donacion no tenia un constructor vacio, entonces me marcaba error
+                // porque DataSnapshot.getValue(Class<T> valueType) debe recibir una clase con un constructor vacio:
+                // https://stackoverflow.com/questions/37830692/parsing-from-datasnapshot-to-java-class-in-firebase-using-getvalue
+
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                     listDonacionesRecientes.add(data.getValue(Donacion.class));
+                    //fillDonationFields(articuloDonacion);
+                }
+
+                // Vamos a inicializar los adapters con el contenido de las donaciones recuperadas de firebase
+                InitializeArticlesAdapters();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                Toast.makeText(VerArticulos.this, "Se ha fallado al cargar los artículos recientes.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        /** Se inicializan los apinners */
         spinnerFacultad=findViewById(R.id.modSpinnerFacultad);
         spinnerCategoria=findViewById(R.id.modSpinnerCategoria);
-
-        lvItems = findViewById(R.id.listaRecientes);
-        adaptadorArticulos = new AdaptadorArticulos(this,listItems);
-        lvItems.setAdapter(adaptadorArticulos);
 
         //Crear la lista del spinner de facultad
         ArrayList<CustomItems> facultades=new ArrayList<>();
@@ -87,9 +108,20 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
             spinnerCategoria.setAdapter(customAdapter2);
             spinnerCategoria.setOnItemSelectedListener(this);
         }
+    }
 
+    private void InitializeArticlesAdapters() {
+        // Vaciando las donaciones obtenidas de Firebase en la lista de articulos recientes
+        for (Donacion donacion: listDonacionesRecientes) {
+            // Aqui falta pasar el Url de la imagen para mostrarla en picasso, sin embargo nos muestra warnings
+            listItemsRecientes.add(new Articulo(donacion.getArticleName(), R.drawable.ic_active_publications,
+                    donacion.getDescription(), donacion.getFacultyName(), donacion.getEmail()+"\n"+donacion.getCelular()));
+        }
 
-
+        /* Se inicializan los adaptadores */
+        lvItems = findViewById(R.id.listaRecientes);
+        adaptadorArticulos = new AdaptadorArticulos(VerArticulos.this,listItemsRecientes);
+        lvItems.setAdapter(adaptadorArticulos);
     }
 
     @Override
@@ -109,18 +141,14 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
 
     /*
      ** Esta funcion agrega elemntos al list view reciente,
-     ** recive un objeto articulo, como minimo debe recibir
+     ** recibe un objeto articulo, como minimo debe recibir
      **   una imagen y un titulo, caso contrario  vease dicha clase
      ***/
     public void addRecentItems(Articulo a){
-        this.listItems.add(a);
+        this.listItemsRecientes.add(a);
     }
 
-    /**
-     * Funcion que hace Intent para la vista de ver mis Donaciones
-     */
-    public void misDonaciones(View view){
-
+    public void VerTodosArticulos(View view) {
+        startActivity(new Intent(this, VerTodosArticulos.class));
     }
-
 }

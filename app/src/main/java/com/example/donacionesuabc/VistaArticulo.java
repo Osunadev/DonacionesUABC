@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.donacionesuabc.ActivitiesLoggedIn.MenuLoggedActivity;
+import com.squareup.picasso.Picasso;
 
 public class VistaArticulo extends AppCompatActivity {
 
@@ -32,6 +33,10 @@ public class VistaArticulo extends AppCompatActivity {
         TextView facultad = (TextView) findViewById(R.id.facultadArticulo);
         TextView descripcion = (TextView) findViewById(R.id.modTxtBoxDescripcion);
         TextView contactos = (TextView) findViewById(R.id.contactoArticulo);
+
+
+        // Aqui en vez de poner este metodo, utilizaremos Picasso para cargar el url de la imagen que pasemos mas adelante
+        // dentro del ImageView
         imageView.setImageResource(articulo.getImgFoto());
         titulo.setText(articulo.getTitulo());
         facultad.setText(articulo.getFacultad());
@@ -45,7 +50,8 @@ public class VistaArticulo extends AppCompatActivity {
     }
 
     public void goHome(View view){
-        Intent intent = new Intent(this, MenuLoggedActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
     }
