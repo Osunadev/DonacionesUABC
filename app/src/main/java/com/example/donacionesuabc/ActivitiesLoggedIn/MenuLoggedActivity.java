@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.donacionesuabc.ActivitiesLoggedIn.PaqueteDonaciones.Donaciones;
@@ -21,9 +22,12 @@ import com.example.donacionesuabc.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import org.w3c.dom.Text;
+
 public class MenuLoggedActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout drawer;
+    private NavigationView navigationView;
     Button donacionesBtn;
     Button intercambiosBtn;
 
@@ -42,7 +46,7 @@ public class MenuLoggedActivity extends AppCompatActivity implements NavigationV
 
 
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -57,6 +61,17 @@ public class MenuLoggedActivity extends AppCompatActivity implements NavigationV
         // Cosas de Firebase
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Poniendo strings customs acorde al correo y nombre del usuario
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUserEmail = (TextView) headerView.findViewById(R.id.userEmailAccount);
+        navUserEmail.setText(user.getEmail());
+        TextView navUserName = (TextView) headerView.findViewById(R.id.userNameAccount);
+        navUserName.setText("");
     }
 
     @Override

@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.donacionesuabc.ActivitiesLoggedIn.MenuLoggedActivity;
 import com.example.donacionesuabc.CustomAdapter;
 import com.example.donacionesuabc.CustomItems;
 import com.example.donacionesuabc.MainActivity;
@@ -187,7 +188,7 @@ public class SubirDonacion extends AppCompatActivity {
 
     // Listeners de los botones
     public void backHome(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intent = new Intent(getApplicationContext(), MenuLoggedActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();

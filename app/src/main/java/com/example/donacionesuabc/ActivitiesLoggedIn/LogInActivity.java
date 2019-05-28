@@ -63,7 +63,7 @@ public class LogInActivity extends AppCompatActivity {
                                 changeMenuLoggedIn();
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(LogInActivity.this, "Authentication failed.",
+                                Toast.makeText(LogInActivity.this, "Autenticación Fallida, inténtelo de nuevo.",
                                         Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -72,4 +72,11 @@ public class LogInActivity extends AppCompatActivity {
     }
 
 
+    public void userForgotPassword(View view) {
+        // Por el momento no hay forma de recuperar su contraseña
+    }
+
+    public void userLogInBackArrow(View view) {
+        finish();
+    }
 }

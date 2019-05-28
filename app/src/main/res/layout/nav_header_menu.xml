@@ -14,6 +14,7 @@
         android:src="@mipmap/ic_launcher_round" />
 
     <TextView
+        android:id="@+id/userNameAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
@@ -21,6 +22,7 @@
         android:textColor="#FFFFFF" />
 
     <TextView
+        android:id="@+id/userEmailAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ejemplo@uabc.edu.mx"

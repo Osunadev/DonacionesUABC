@@ -7,60 +7,171 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".ActivitiesLoggedIn.LogInActivity">
 
-    <EditText
-        android:id="@+id/emailLoginTxt"
+    <TextView
+        android:id="@+id/tittleInicioSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/source_serif_pro_semibold"
+        android:gravity="center_horizontal"
+        android:outlineAmbientShadowColor="#000A0000"
+        android:outlineSpotShadowColor="#00130101"
+        android:shadowColor="#00030000"
+        android:shadowDx="100"
+        android:shadowDy="10"
+        android:shadowRadius="0"
+        android:text="Inicio de Sesión"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/backBtnInicioSesion"
+        android:layout_width="71dp"
+        android:layout_height="58dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Correo institucional UABC"
-        android:inputType="textPersonName"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="userLogInBackArrow"
+        android:src="?attr/actionModeCloseDrawable"
+        android:tint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/border_login_yellow"
+        android:orientation="vertical"
+        android:outlineProvider="background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintTop_toTopOf="@+id/guideline11">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="179dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
-    <EditText
-        android:id="@+id/passwordTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Constraseña"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailLoginTxt" />
+        <TextView
+            android:id="@+id/labelCorreo"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/open_sans_light"
+            android:gravity="left"
+            android:text="Correo UABC / Matrícula UABC:"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/emailLoginTxt"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/open_sans_light"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="27dp" />
+
+        <TextView
+            android:id="@+id/labelPassword"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/open_sans_light"
+            android:gravity="left"
+            android:text="Contraseña"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <EditText
+            android:id="@+id/passwordTxt"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/colorPrimary"
+            android:ems="10"
+            android:fontFamily="@font/open_sans_light"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/userLogInBtn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/boton_azul"
+        android:fontFamily="@font/open_sans_light"
+        android:onClick="signInUser"
+        android:text="Iniciar Sesión"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:id="@+id/forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Iniciar Sesión"
-        android:onClick="signInUser"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        android:fontFamily="@font/abel"
+        android:onClick="userForgotPassword"
+        android:text="@string/log_in_forgot_password"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userLogInBtn" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/guideline11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="156dp" />
+        app:layout_constraintGuide_begin="88dp" />
 
 
 </android.support.constraint.ConstraintLayout>

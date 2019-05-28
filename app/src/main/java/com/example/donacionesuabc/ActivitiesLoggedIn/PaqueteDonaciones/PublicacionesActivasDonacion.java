@@ -51,4 +51,8 @@ public class PublicacionesActivasDonacion extends AppCompatActivity implements A
     public void addRecentItems(Articulo a){
         this.listItems.add(a);
     }
+
+    public void backArrowActivePublications(View view) {
+        finish();
+    }
 }

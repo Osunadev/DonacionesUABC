@@ -10,6 +10,7 @@ import android.support. v7.widget.Toolbar;
 
 import com.example.donacionesuabc.ActivitiesLoggedIn.LogInActivity;
 import com.example.donacionesuabc.ActivitiesLoggedIn.MenuLoggedActivity;
+import com.example.donacionesuabc.ActivitiesLoggedIn.RegisterActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void registerUser(View view) {
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
 
     /****/
     public void menu(View view){

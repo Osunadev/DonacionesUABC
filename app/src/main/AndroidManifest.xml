@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ActivitiesLoggedIn.LogInActivity"></activity>
+        <activity android:name=".ActivitiesLoggedIn.RegisterActivity"></activity>
+        <activity android:name=".ActivitiesLoggedIn.LogInActivity" />
         <activity
             android:name=".ActivitiesLoggedIn.PaqueteDonaciones.ModificarDonacion"
             android:screenOrientation="portrait" />
