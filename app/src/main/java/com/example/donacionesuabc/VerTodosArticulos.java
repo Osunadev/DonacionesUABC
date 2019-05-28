@@ -52,7 +52,7 @@ public class VerTodosArticulos extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError error) {
-                Toast.makeText(VerTodosArticulos.this, "Se ha fallado al cargar los artículos recientes.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VerTodosArticulos.this, "Se ha fallado al cargar los todos los artículos de donación.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -65,7 +65,8 @@ public class VerTodosArticulos extends AppCompatActivity {
         for (Donacion donacion: listDonaciones) {
             // Aqui falta pasar el Url de la imagen para mostrarla en picasso, sin embargo nos muestra warnings
             listItems.add(new Articulo(donacion.getArticleName(), R.drawable.ic_active_publications,
-                    donacion.getDescription(), donacion.getFacultyName(), donacion.getEmail()+"\n"+donacion.getCelular()));
+                    donacion.getDescription(), donacion.getFacultyName(), donacion.getEmail()+"\n"+donacion.getCelular(),
+                    donacion.getImageUrl(), donacion.getCategory()));
         }
 
         /* Se inicializan los adaptadores */

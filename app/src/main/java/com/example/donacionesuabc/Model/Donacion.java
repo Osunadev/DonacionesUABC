@@ -27,6 +27,7 @@ public class Donacion {
         this.category = category;
         this.description = description;
         this.email = email;
+        this.emailAlt = emailAlt;
         this.facebook = facebook;
         this.celular = celular;
         this.imageUrl = imageUrl;

@@ -51,8 +51,6 @@ public class SubirDonacion extends AppCompatActivity {
 
     Button postBtn;
     EditText articleName;
-    EditText facultyName;
-    EditText category;
     EditText description;
     EditText email;
     EditText facebook;
@@ -216,10 +214,12 @@ public class SubirDonacion extends AppCompatActivity {
         if (!articleName.getText().toString().isEmpty() && !facultad.isEmpty() && !categoria.isEmpty()
                 && !description.getText().toString().isEmpty() && !email.getText().toString().isEmpty()
                 && !facebook.getText().toString().isEmpty() && !celular.getText().toString().isEmpty()) {
-
+            postBtn.setEnabled(false);
             if (uploadTask != null && uploadTask.isInProgress()) {
+
                 Toast.makeText(SubirDonacion.this, "Donacion en progreso.", Toast.LENGTH_SHORT).show();
             } else {
+                postBtn.setEnabled(true);
                 uploadDonation();
             }
         } else {

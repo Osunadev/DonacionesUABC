@@ -72,29 +72,29 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         ArrayList<CustomItems> facultades=new ArrayList<>();
         facultades.add(new CustomItems("Seleccione Facultad",R.drawable.facultades));
         facultades.add(new CustomItems("Artes",R.drawable.artes));
-        facultades.add(new CustomItems("Ciencias Quimicas e Ingenieria",R.drawable.ingenieria));
-        facultades.add(new CustomItems("Contaduria y Administracion",R.drawable.administracion));
+        facultades.add(new CustomItems("Ciencias Químicas e Ingenieria",R.drawable.ingenieria));
+        facultades.add(new CustomItems("Contaduría y Administración",R.drawable.administracion));
         facultades.add(new CustomItems("Deportes",R.drawable.deportes));
         facultades.add(new CustomItems("Derecho",R.drawable.derecho));
-        facultades.add(new CustomItems("Economia y Relaciones Internacionales",R.drawable.economia));
+        facultades.add(new CustomItems("Economía y Relaciones Internacionales",R.drawable.economia));
         facultades.add(new CustomItems("Humanidades y Ciencias Sociales",R.drawable.humanidades));
         facultades.add(new CustomItems("Idiomas",R.drawable.idiomas));
-        facultades.add(new CustomItems("Medicina y Psicologia",R.drawable.medicina));
-        facultades.add(new CustomItems("Odontologia",R.drawable.odontologia));
+        facultades.add(new CustomItems("Medicina y Psicología",R.drawable.medicina));
+        facultades.add(new CustomItems("Odontología",R.drawable.odontologia));
         facultades.add(new CustomItems("Turismo",R.drawable.turismo));
-        facultades.add(new CustomItems("Investigaciones Historicas",R.drawable.historia));
+        facultades.add(new CustomItems("Investigaciones Históricas",R.drawable.historia));
 
         //Crear la lista del spinner de categorias
         ArrayList<CustomItems> categorias=new ArrayList<>();
-        categorias.add(new CustomItems("Seleccione Categoria",R.drawable.categorias));
+        categorias.add(new CustomItems("Seleccione Categoría",R.drawable.categorias));
         categorias.add(new CustomItems("Libros",R.drawable.libros));
         categorias.add(new CustomItems("Ropa",R.drawable.ropa));
-        categorias.add(new CustomItems("Dispositivos Electronicos",R.drawable.electronicos));
+        categorias.add(new CustomItems("Dispositivos Electrónicos",R.drawable.electronicos));
         categorias.add(new CustomItems("Utencilios de Artes",R.drawable.utencilios_artes));
         categorias.add(new CustomItems("Instrumentos Musicales",R.drawable.instrumentos_musicales));
-        categorias.add(new CustomItems("Materiales de Quimica",R.drawable.materiales_quimica));
-        categorias.add(new CustomItems("Articulos Deportivos",R.drawable.deportivos));
-        categorias.add(new CustomItems("Articulos Medicos",R.drawable.articulos_medicos));
+        categorias.add(new CustomItems("Materiales de Química",R.drawable.materiales_quimica));
+        categorias.add(new CustomItems("Artículos Deportivos",R.drawable.deportivos));
+        categorias.add(new CustomItems("Artículos Médicos",R.drawable.articulos_medicos));
 
         //Hacer el adaptador de los spinners
         CustomAdapter customAdapter=new CustomAdapter(this,facultades);
@@ -115,7 +115,8 @@ public class VerArticulos extends AppCompatActivity implements AdapterView.OnIte
         for (Donacion donacion: listDonacionesRecientes) {
             // Aqui falta pasar el Url de la imagen para mostrarla en picasso, sin embargo nos muestra warnings
             listItemsRecientes.add(new Articulo(donacion.getArticleName(), R.drawable.ic_active_publications,
-                    donacion.getDescription(), donacion.getFacultyName(), donacion.getEmail()+"\n"+donacion.getCelular()));
+                    donacion.getDescription(), donacion.getFacultyName(), donacion.getEmail()+"\n"+donacion.getCelular(),
+                    donacion.getImageUrl(), donacion.getCategory()));
         }
 
         /* Se inicializan los adaptadores */

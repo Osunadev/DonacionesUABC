@@ -28,10 +28,10 @@ public class PublicacionesActivasDonacion extends AppCompatActivity implements A
         /**
          * Se ponen estos "articulos" para pruebas mientras se implementan los buenos
          */
-        listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
+        /*listItems.add(new Articulo("Charizard", R.drawable.charizard, "Pokemon fuego/volador", "FCQI", "isaachctj@hotmail.com"));
         listItems.add(new Articulo("Yveltal", R.drawable.yveltal, "Pokemon legendario que, al extender sus alas y las plumas de la cola, emite un brillo carmesi que absorbe la energía vital de su enemigo", "FCQI", "isaachctj@hotmail.com"));
         listItems.add(new Articulo("Silvally", R.drawable.silvally, "Pokemon artificial que cambia de tipo", "FCQI", "isaachctj@hotmail.com"));
-
+*/
         listaDonaciones = findViewById(R.id.listaDonaciones);
         adaptadorDonaciones = new AdaptadorDonaciones(this,listItems);
         listaDonaciones.setAdapter(adaptadorDonaciones);

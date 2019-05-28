@@ -11,6 +11,8 @@ public class Articulo  implements Parcelable{
     String descripcion;
     String facultad;
     String userData;
+    String imageUrl;
+    String categoria;
 
     @Override
     public int describeContents() {
@@ -23,6 +25,8 @@ public class Articulo  implements Parcelable{
             dest.writeString(this.descripcion);
             dest.writeString(this.facultad);
             dest.writeString(this.userData);
+            dest.writeString(this.imageUrl);
+            dest.writeString(this.categoria);
     }
 
     /**used just for reading object from parcel*/
@@ -32,6 +36,8 @@ public class Articulo  implements Parcelable{
         this.descripcion = parcel.readString();
         this.facultad = parcel.readString();
         this.userData = parcel.readString();
+        this.imageUrl = parcel.readString();
+        this.categoria = parcel.readString();
     }
 
     public static final Parcelable.Creator<Articulo> CREATOR = new Parcelable.Creator<Articulo>(){
@@ -47,16 +53,18 @@ public class Articulo  implements Parcelable{
         }
     };
 
-    public Articulo(int imgFoto, String titulo) {
-        this(titulo,imgFoto," "," "," ");
+    public Articulo(int imgFoto, String titulo, String imageUrl) {
+        this(titulo,imgFoto," "," "," ", imageUrl, "");
     }
 
-    public Articulo(String titulo, int imgFoto, String descripcion, String facultad, String userData) {
+    public Articulo(String titulo, int imgFoto, String descripcion, String facultad, String userData, String imageUrl, String categoria) {
         this.titulo = titulo;
         this.imgFoto = imgFoto;
         this.descripcion = descripcion;
         this.facultad = facultad;
         this.userData = userData;
+        this.imageUrl = imageUrl;
+        this.categoria = categoria;
     }
 
     public String getFacultad() {
@@ -97,5 +105,21 @@ public class Articulo  implements Parcelable{
 
     public void setImgFoto(int imgFoto){
         this.imgFoto = imgFoto;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 }

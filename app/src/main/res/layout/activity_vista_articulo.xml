@@ -7,6 +7,20 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".VistaArticulo">
 
+    <ProgressBar
+        android:id="@+id/progressBarArticulo"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tittleArticulo"
         android:layout_width="wrap_content"
@@ -14,7 +28,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:fontFamily="@font/source_serif_pro_semibold"
         android:outlineAmbientShadowColor="#000A0000"
         android:outlineSpotShadowColor="#00130101"
@@ -22,9 +35,9 @@
         android:shadowDx="100"
         android:shadowDy="10"
         android:shadowRadius="0"
-        android:text="Artículo"
+        android:text="Artículo Donación"
         android:textColor="@android:color/background_light"
-        android:textSize="40sp"
+        android:textSize="32sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -33,9 +46,9 @@
 
     <ImageButton
         android:id="@+id/backBtn"
-        android:layout_width="71dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="goBack"
         android:tint="#FFFFFF"
@@ -45,10 +58,10 @@
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageButton
-        android:id="@+id/homeBtn"
-        android:layout_width="71dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/homeBtnDonacion"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="goHome"
         android:tint="#FFFFFF"
@@ -59,58 +72,72 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintBottom_toTopOf="@+id/btnSendMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
         <ImageView
             android:id="@+id/modFotoArticulo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="174dp"
+            android:layout_height="172dp"
             android:layout_gravity="center_horizontal" />
 
         <TextView
             android:id="@+id/nombreArticulo"
             android:layout_width="match_parent"
-            android:layout_height="41dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:fontFamily="@font/open_sans_light"
             android:gravity="center"
-            android:text="TextView"
+            android:text="Cargando..."
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="30sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/facultadArticulo"
             android:layout_width="match_parent"
-            android:layout_height="49dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/open_sans_light"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/categoriaArticulo"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/open_sans_light"
             android:gravity="center"
-            android:text="TextView"
             android:textAlignment="center"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/modLabelDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_gravity="left"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -118,25 +145,24 @@
             android:gravity="center_vertical"
             android:text="Descripción"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/modTxtBoxDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:background="@color/colorPrimary"
             android:fontFamily="@font/open_sans_light"
-            android:text="TextView"
             android:textAlignment="textStart"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/labelContacto"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_gravity="left"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
@@ -144,7 +170,7 @@
             android:gravity="center_vertical"
             android:text="Medios de contacto externos:"
             android:textColor="#ffffff"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -156,7 +182,6 @@
             android:background="@color/colorPrimary"
             android:fontFamily="@font/open_sans_light"
             android:paddingRight="32dp"
-            android:text="TextView"
             android:textAlignment="textStart"
             android:textSize="14sp" />
 
@@ -167,13 +192,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="82dp" />
+        app:layout_constraintGuide_begin="52dp" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
+        android:id="@+id/guideline12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="16dp" />
+        app:layout_constraintGuide_begin="264dp" />
+
+    <Button
+        android:id="@+id/btnSendMessage"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/boton_azul"
+        android:text="Contactar por chat privado"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
